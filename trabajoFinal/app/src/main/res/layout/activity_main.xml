@@ -40,14 +40,29 @@
             android:hint="Buscar Personaje" />
 
         <Button
-            android:id="@+id/btn_buscar"
+            android:id="@+id/btn_buscarPorId"
             style="@android:style/Widget.DeviceDefault.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="casual"
-            android:text="Buscar"
+            android:text="Buscar por id"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_buscarPorNombre"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="casual"
+            android:text="Buscar por nombre"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/resultado_busqueda"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
