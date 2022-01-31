@@ -6,19 +6,19 @@ public class Personaje {
     private String nombre_real;
     private String lugar_nacimiento;
     private String editorial;
-    private String poderes;
-    private String datos;
+    private Powerstat powerstat;
+    private InformacionPersonal datos;
     private String img;
     private String id;
 
     public Personaje () {}
 
-    public Personaje(String nombre_personaje, String nombre_real, String lugar_nacimiento, String editorial, String poderes, String datos, String img, String id) {
+    public Personaje(String nombre_personaje, String nombre_real, String lugar_nacimiento, String editorial, Powerstat powerstat, InformacionPersonal datos, String img, String id) {
         this.nombre_personaje = nombre_personaje;
         this.nombre_real = nombre_real;
         this.lugar_nacimiento = lugar_nacimiento;
         this.editorial = editorial;
-        this.poderes = poderes;
+        this.powerstat = powerstat;
         this.datos = datos;
         this.img = img;
         this.id = id;
@@ -40,11 +40,11 @@ public class Personaje {
         return editorial;
     }
 
-    public String getPoderes() {
-        return poderes;
+    public Powerstat getPowestat() {
+        return powerstat;
     }
 
-    public String getDatos() {
+    public InformacionPersonal getInformacionPersonal() {
         return datos;
     }
 
@@ -63,8 +63,8 @@ public class Personaje {
                 ", nombre_real='" + nombre_real + '\'' +
                 ", lugar_nacimiento='" + lugar_nacimiento + '\'' +
                 ", editorial='" + editorial + '\'' +
-                ", poderes='" + poderes + '\'' +
-                ", datos='" + datos + '\'' +
+                ", poderes='" + powerstat.toString() + '\'' +
+                ", datos='" + datos.toString() + '\'' +
                 ", img='" + img + '\'' +
                 ", id='" + id + '\'' +
                 '}';
