@@ -10,10 +10,15 @@ import android.text.Editable;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -32,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private Button btnBuscarPorId;
     private Button btnBuscarPorNombre;
+    private Button btnFavoritos;
     private EditText txtBuscador;
     private ListView resultadoBusqueda;
     private Adaptador adapter;
@@ -43,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
 
         txtBuscador = findViewById(R.id.txt_buscador);
+        btnFavoritos = findViewById(R.id.btn_favoritos);
         btnBuscarPorId = findViewById(R.id.btn_buscarPorId);
         btnBuscarPorNombre = findViewById(R.id.btn_buscarPorNombre);
         resultadoBusqueda = findViewById(R.id.resultado_busqueda);
@@ -62,8 +69,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
-    }
+        btnFavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                misFavoritos();
+            }
+        });
 
+    }
 
     private void buscarPersonajePorId (final Editable id) {
         String url = "https://superheroapi.com/api/4764196856980399/" + id;
@@ -87,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                     Personaje personaje = new Personaje(jsonObject.getString("name"),jsonObject.getJSONObject("biography").getString("full-name"), jsonObject.getJSONObject("biography").getString("place-of-birth"),
                             jsonObject.getJSONObject("biography").getString("publisher"), powerstat, datos, jsonObject.getJSONObject("image").getString("url"), jsonObject.getString("id"));
-                    //Log.d ("my_tag2", personaje.toString());
 
                     listaPersonajes.add(personaje);
 
@@ -102,8 +114,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("Error", error.getMessage());
-            }
+                Log.e("Error", error.getMessage()); }
         });
         Volley.newRequestQueue(this).add(getRequest);
     }
@@ -120,8 +131,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray array = jsonObject.getJSONArray("results");
-                    //Log.d("my_tag", array.toString());
-                    //Log.d("my_tag_size", String.valueOf(array.length()));
 
                     for (int i=0; i<array.length(); i++) {
                         JSONObject item = array.getJSONObject(i);
@@ -137,7 +146,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         Personaje personaje = new Personaje(item.getString("name"),item.getJSONObject("biography").getString("full-name"),
                                 item.getJSONObject("biography").getString("place-of-birth"), item.getJSONObject("biography").getString("publisher"), powerstat, datos,
                                 item.getJSONObject("image").getString("url"), item.getString("id"));
-                        //Log.d ("my_tag_personaje", personaje.toString());
 
                         listaPersonajes.add(personaje);
                     }
@@ -159,13 +167,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Volley.newRequestQueue(this).add(getRequest);
 
-
     }
 
+    public void misFavoritos () {
+
+        Intent intent = new Intent(this, activity_misFavoritos.class);
+        startActivity(intent);
+    }
+
+    //Click de los items de ListView
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
-        //Toast.makeText(this, "Se clickeo elemento " + posicion, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, activity_detallePersonaje.class);
+
+        intent.putExtra("id_personaje", adapter.getItem(posicion).getId());
         intent.putExtra("personaje_imagen", adapter.getItem(posicion).getImg());
         intent.putExtra("personaje_nombrePersonaje", adapter.getItem(posicion).getNombre_personaje());
         intent.putExtra("personaje_nombreReal", adapter.getItem(posicion).getNombre_real());

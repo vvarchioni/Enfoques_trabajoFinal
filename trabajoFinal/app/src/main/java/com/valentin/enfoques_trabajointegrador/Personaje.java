@@ -2,6 +2,7 @@ package com.valentin.enfoques_trabajointegrador;
 
 public class Personaje {
 
+    private String id;
     private String nombre_personaje;
     private String nombre_real;
     private String lugar_nacimiento;
@@ -9,7 +10,6 @@ public class Personaje {
     private Powerstat powerstat;
     private InformacionPersonal datos;
     private String img;
-    private String id;
 
     public Personaje () {}
 

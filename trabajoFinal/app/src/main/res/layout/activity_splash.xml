@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/icono_app"
+    android:background="@drawable/icono_app"
     tools:context=".activity_splash">
 </RelativeLayout>
