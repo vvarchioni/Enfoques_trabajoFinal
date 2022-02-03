@@ -5,6 +5,7 @@ import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,10 +26,11 @@ public class activity_detallePersonaje extends AppCompatActivity {
 
         Button btn_fav = findViewById(R.id.btn_fav);
         Button btn_share = findViewById(R.id.btn_share);
+        TextView txt_verDetalle = findViewById(R.id.btn_detalle);
 
         TextView nombrePersonaje = findViewById(R.id.titulo_nombrePersonaje);
         ImageView imagen = findViewById(R.id.imagen_personaje);
-        TextView nombreReal = findViewById(R.id.detalle_nombreReal);
+        /*TextView nombreReal = findViewById(R.id.detalle_nombreReal);
         TextView lugarNacimiento = findViewById(R.id.detalle_lugarNacimiento);
         TextView editorial = findViewById(R.id.detalle_editorial);
         TextView poder1 = findViewById(R.id.detalle_poder1);
@@ -43,13 +45,13 @@ public class activity_detallePersonaje extends AppCompatActivity {
         TextView dato4 = findViewById(R.id.detalle_dato4);
         TextView dato5 = findViewById(R.id.detalle_dato5);
         TextView dato6 = findViewById(R.id.detalle_dato6);
-        TextView dato7 = findViewById(R.id.detalle_dato7);
+        TextView dato7 = findViewById(R.id.detalle_dato7);*/
 
-        nombrePersonaje.setText(getIntent().getStringExtra("personaje_nombrePersonaje"));
+       nombrePersonaje.setText(getIntent().getStringExtra("personaje_nombrePersonaje"));
 
         Picasso.get().load(getIntent().getStringExtra("personaje_imagen")).into(imagen);
 
-        nombreReal.setText("Nombre Real = " + getIntent().getStringExtra("personaje_nombreReal"));
+        /* nombreReal.setText("Nombre Real = " + getIntent().getStringExtra("personaje_nombreReal"));
         lugarNacimiento.setText("Lugar Nacimiento = " + getIntent().getStringExtra("personaje_lugarNacimiento"));
         editorial.setText("Editorial = " + getIntent().getStringExtra("personaje_editorial"));
         poder1.setText("Inteligencia = " + getIntent().getStringExtra("personaje_poder1"));
@@ -64,7 +66,7 @@ public class activity_detallePersonaje extends AppCompatActivity {
         dato4.setText("Peso = " + getIntent().getStringExtra("personaje_dato4"));
         dato5.setText("Color ojos = " + getIntent().getStringExtra("personaje_dato5"));
         dato6.setText("Color cabello = " + getIntent().getStringExtra("personaje_dato6"));
-        dato7.setText("Ocupacion = " + getIntent().getStringExtra("personaje_dato7"));
+        dato7.setText("Ocupacion = " + getIntent().getStringExtra("personaje_dato7"));*/
 
         //Funcion del boton de favoritos
         btn_fav.setOnClickListener(new View.OnClickListener() {
@@ -100,14 +102,44 @@ public class activity_detallePersonaje extends AppCompatActivity {
         btn_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String share = "¿Que tal? Te habla " + getIntent().getStringExtra("personaje_nombrePersonaje") +
+                        ", aunque algunos tambien me conocen por " + getIntent().getStringExtra("personaje_nombreReal") + ". Naci en " + getIntent().getStringExtra("personaje_lugarNacimiento") +
+                        " pero quien realmente me dio vida fue la Editorial " + getIntent().getStringExtra("personaje_editorial") + ". Paso mi tiempo trabajando como " + getIntent().getStringExtra("personaje_dato7") + ". Para que sepas un poco mas acerca de mis poderes, puedo contarte que tengo "
+                        + getIntent().getStringExtra("personaje_poder1") + "% de Inteligencia, " + getIntent().getStringExtra("personaje_poder2") + "% de Fuerza, " + getIntent().getStringExtra("personaje_poder3")
+                        + "% de Velocidad, " + getIntent().getStringExtra("personaje_poder4") + "% de Durabilidad, " + getIntent().getStringExtra("personaje_poder5") + "% de Energia, "
+                        + getIntent().getStringExtra("personaje_poder6") + "% de Combate. Dudo que no me hayas visto, pero en el caso de que eso no haya pasado, por si algun dia me cruzas te cuento mi genero es " +
+                        getIntent().getStringExtra("personaje_dato1") + ", mi raza es " + getIntent().getStringExtra("personaje_dato2") + ", mido " + getIntent().getStringExtra("personaje_dato3") +
+                        ", mi peso es " + getIntent().getStringExtra("personaje_dato4") + ", tengo unos ojos color " + getIntent().getStringExtra("personaje_dato5") + " y cabello color " +
+                        getIntent().getStringExtra("personaje_dato6") + ". Simplemente pasaba a comentarte que si no lo has hecho aun, no dudes en descargarte SUPERevil para conocer a todos los personajes del mundo" +
+                        " de los comics, asi como lo has hecho conmigo.";
+
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "¿Que tal? Por si no sabes quien soy, te habla " + getIntent().getStringExtra("personaje_nombrePersonaje") +
-                        ". Queria invitarte a descargarte la app SUPERevil, ¡donde conoceras la informacion de todos los personajes del mundo de los Comics!");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, share);
                 sendIntent.setType("text/plain");
 
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
                 startActivity(shareIntent);
+            }
+        });
+
+        //Funcion del txt verDetalle
+        txt_verDetalle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String descripcion = "¿Que tal? Te habla " + getIntent().getStringExtra("personaje_nombrePersonaje") +
+                        ", aunque algunos tambien me conocen por " + getIntent().getStringExtra("personaje_nombreReal") + ". Naci en " + getIntent().getStringExtra("personaje_lugarNacimiento") +
+                        " pero quien realmente me dio vida fue la Editorial " + getIntent().getStringExtra("personaje_editorial") + ". Paso mi tiempo trabajando como " + getIntent().getStringExtra("personaje_dato7") + ". Para que sepas un poco mas acerca de mis poderes, puedo contarte que tengo "
+                        + getIntent().getStringExtra("personaje_poder1") + "% de Inteligencia, " + getIntent().getStringExtra("personaje_poder2") + "% de Fuerza, " + getIntent().getStringExtra("personaje_poder3")
+                        + "% de Velocidad, " + getIntent().getStringExtra("personaje_poder4") + "% de Durabilidad, " + getIntent().getStringExtra("personaje_poder5") + "% de Energia, "
+                        + getIntent().getStringExtra("personaje_poder6") + "% de Combate. Dudo que no me hayas visto, pero en el caso de que eso no haya pasado, por si algun dia me cruzas te cuento mi genero es " +
+                        getIntent().getStringExtra("personaje_dato1") + ", mi raza es " + getIntent().getStringExtra("personaje_dato2") + ", mido " + getIntent().getStringExtra("personaje_dato3") +
+                        ", mi peso es " + getIntent().getStringExtra("personaje_dato4") + ", tengo unos ojos color " + getIntent().getStringExtra("personaje_dato5") + " y cabello color " +
+                        getIntent().getStringExtra("personaje_dato6") + ".";
+
+                Intent intent = new Intent(activity_detallePersonaje.this, activity_popup.class);
+                intent.putExtra("detalle_personaje", descripcion);
+                startActivity(intent);
             }
         });
 

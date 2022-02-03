@@ -7,15 +7,18 @@
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/drawable/animation_fav.xml" value="0.12314814814814815" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/drawable/style_popup.xml" value="0.3828125" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout-v28/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_buscarXid.xml" value="0.36666666666666664" />
-        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_detalle_personaje.xml" value="0.1" />
-        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_mis_favoritos.xml" value="0.15087719298245614" />
+        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_detalle_personaje.xml" value="0.25" />
+        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_mis_favoritos.xml" value="0.33" />
+        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_popup.xml" value="0.36666666666666664" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/content_activity_detalle_personaje.xml" value="0.2791666666666667" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/fragment_first.xml" value="0.2791666666666667" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/item_row.xml" value="0.25" />
+        <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/popup.xml" value="0.36666666666666664" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/layout/resultado_busqueda.xml" value="0.36666666666666664" />
         <entry key="..\:/Valentin/Facultad/Materias/Optativas/Enfoques/trabajoFinal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.24351851851851852" />
       </map>
