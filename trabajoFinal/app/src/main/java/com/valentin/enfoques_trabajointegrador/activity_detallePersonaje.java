@@ -91,9 +91,9 @@ public class activity_detallePersonaje extends AppCompatActivity {
                     db.personajeDAO().insert(personaje);
 
                     Toast.makeText(activity_detallePersonaje.this, "Añadido a favoritos", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(activity_detallePersonaje.this, "Ya forma parte de tus personajes favoritos", Toast.LENGTH_SHORT).show();
                 }
-
-                Toast.makeText(activity_detallePersonaje.this, "Ya forma parte de tus personajes favoritos", Toast.LENGTH_SHORT).show();
 
             }
         });
