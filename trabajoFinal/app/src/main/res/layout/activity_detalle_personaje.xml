@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -14,14 +15,16 @@
         android:layout_marginTop="10dp"
         android:fontFamily="casual"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:id="@+id/imagen_personaje"
@@ -29,7 +32,7 @@
             android:layout_height="400dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:contentDescription="@string/descripcion_imagen_detalle"            />
+            android:contentDescription="@string/descripcion_imagen_detalle"/>
 
         <TextView
             android:id="@+id/btn_detalle"
@@ -37,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
             android:layout_gravity="center"
-            android:text="Ver detalle" />
+            android:text="@string/ver_detalle"/>
 
     </LinearLayout>
 

@@ -13,15 +13,16 @@
     <!--usado en MainActivity.xml-->
     <string name="descripcion_imagen_main">Imagen personajes aplicacion</string>
     <string name="hint_buscador">Buscar Personaje</string>
-    <string name="txt_botonID">Buscar por id</string>
-    <string name="txt_botonNombre">Buscar por Nombre</string>
+    <string name="txt_botonID">Id</string>
+    <string name="txt_botonNombre">Nombre</string>
 
     <!--usado en activity_detalle_personaje.xml-->
     <string name="descripcion_imagen_detalle">Imagen Personaje</string>
-
+    <string name="ver_detalle">Ver Detalle</string>
 
     <!--usado en activity_mis_favoritos.xml-->
     <string name="titulo_misFavoritos">Mis favoritos</string>
+
 
 
 </resources>

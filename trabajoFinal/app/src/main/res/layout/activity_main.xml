@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -32,6 +33,7 @@
                 android:id="@+id/txt_buscador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:hint="@string/hint_buscador"
                 android:inputType="text"
                 android:autofillHints="name" />
@@ -41,26 +43,28 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
-            <Button
-                android:id="@+id/btn_buscarPorId"
-                style="@android:style/Widget.DeviceDefault.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="casual"
-                android:text="@string/txt_botonID"
-                android:textStyle="bold"/>
+                <Button
+                    android:id="@+id/btn_buscarPorId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_button"
+                    android:text="@string/txt_botonID"
+                    android:textColor="@color/white"
+                    android:drawableLeft="@drawable/lupa"/>
 
-            <Button
-                android:id="@+id/btn_buscarPorNombre"
-                style="@android:style/Widget.DeviceDefault.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="casual"
-                android:text="@string/txt_botonNombre"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/btn_buscarPorId"/>
+                <Button
+                    android:id="@+id/btn_buscarPorNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_toEndOf="@+id/btn_buscarPorId"
+                    android:background="@drawable/custom_button"
+                    android:text="@string/txt_botonNombre"
+                    android:textColor="@color/white"
+                    android:drawableLeft="@drawable/lupa"/>
 
             </RelativeLayout>
 
