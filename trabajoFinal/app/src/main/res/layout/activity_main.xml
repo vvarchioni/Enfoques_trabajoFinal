@@ -52,7 +52,7 @@
                     android:background="@drawable/custom_button"
                     android:text="@string/txt_botonID"
                     android:textColor="@color/white"
-                    android:drawableLeft="@drawable/lupa"/>
+                    android:drawableStart="@drawable/lupa"/>
 
                 <Button
                     android:id="@+id/btn_buscarPorNombre"
@@ -64,7 +64,7 @@
                     android:background="@drawable/custom_button"
                     android:text="@string/txt_botonNombre"
                     android:textColor="@color/white"
-                    android:drawableLeft="@drawable/lupa"/>
+                    android:drawableStart="@drawable/lupa"/>
 
             </RelativeLayout>
 
@@ -75,6 +75,6 @@
     <ListView
         android:id="@+id/resultado_busqueda"
         android:layout_width="match_parent"
-        android:layout_height="105dp" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

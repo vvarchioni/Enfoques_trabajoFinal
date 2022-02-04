@@ -11,7 +11,8 @@
         android:layout_gravity="center"
         android:text="@string/titulo_misFavoritos"
         android:fontFamily="casual"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"/>
 
     <ListView
         android:id="@+id/list_favs"

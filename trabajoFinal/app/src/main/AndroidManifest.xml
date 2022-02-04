@@ -11,10 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity_popup"
-            android:exported="true"
-            android:theme="@style/AppTheme.TemaPopup"/>
-        <activity
             android:name=".activity_misFavoritos"
             android:exported="true" />
         <activity

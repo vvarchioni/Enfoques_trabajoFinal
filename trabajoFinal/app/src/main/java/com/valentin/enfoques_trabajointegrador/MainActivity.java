@@ -108,13 +108,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     resultadoBusqueda.setAdapter(adapter);
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "Error en busqueda por ID", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Error", error.getMessage()); }
+            public void onErrorResponse(VolleyError error) { Log.e("Error", error.getMessage()); }
         });
         Volley.newRequestQueue(this).add(getRequest);
     }
@@ -155,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     resultadoBusqueda.setAdapter(adapter);
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "Error en busqueda por NOMBRE", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
