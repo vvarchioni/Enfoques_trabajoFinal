@@ -26,6 +26,7 @@ public class activity_detallePersonaje extends AppCompatActivity {
 
         Button btn_fav = findViewById(R.id.btn_fav);
         Button btn_share = findViewById(R.id.btn_share);
+        Button btn_volver = findViewById(R.id.btn_volver);
         TextView txt_detalle = findViewById(R.id.txt_detalle);
 
         TextView nombrePersonaje = findViewById(R.id.titulo_nombrePersonaje);
@@ -100,5 +101,14 @@ public class activity_detallePersonaje extends AppCompatActivity {
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
                 startActivity(shareIntent);
             }
-        });    }
+        });
+
+        btn_volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
+
 }

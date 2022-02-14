@@ -108,7 +108,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     resultadoBusqueda.setAdapter(adapter);
 
                 } catch (JSONException e) {
-                    Toast.makeText(MainActivity.this, "Error en busqueda por ID", Toast.LENGTH_SHORT).show();
+                    //limpia la lista de personajes y luego actualiza el adapter
+                    listaPersonajes.clear();
+                    adapter = new Adaptador(MainActivity.this, R.layout.item_row, listaPersonajes);
+                    resultadoBusqueda.setAdapter(adapter);
+
+                    Toast.makeText(MainActivity.this, "Ingrese ID", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -154,7 +159,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     resultadoBusqueda.setAdapter(adapter);
 
                 } catch (JSONException e) {
-                    Toast.makeText(MainActivity.this, "Error en busqueda por NOMBRE", Toast.LENGTH_SHORT).show();
+                    //limpia la lista de personajes y luego actualiza el adapter
+                    listaPersonajes.clear();
+                    adapter = new Adaptador(MainActivity.this, R.layout.item_row, listaPersonajes);
+                    resultadoBusqueda.setAdapter(adapter);
+
+                    Toast.makeText(MainActivity.this, "Ingrese NOMBRE", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {

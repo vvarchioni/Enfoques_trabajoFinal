@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class activity_misFavoritos extends AppCompatActivity implements AdapterV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_favoritos);
 
+        Button btn_volver = findViewById(R.id.btn_volver);
         listaFavoritos = findViewById(R.id.list_favs);
         listaFavoritos.setOnItemClickListener(this);
 
@@ -42,6 +44,13 @@ public class activity_misFavoritos extends AppCompatActivity implements AdapterV
         adapter = new Adaptador_MisFavoritos(this, R.layout.item_row, listaPersonajes);
 
         listaFavoritos.setAdapter(adapter);
+
+        btn_volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
@@ -74,4 +83,5 @@ public class activity_misFavoritos extends AppCompatActivity implements AdapterV
         titulo.setTitle("Desmarcar Favorito");
         titulo.show();
     }
+
 }
